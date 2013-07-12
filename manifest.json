@@ -1,0 +1,23 @@
+{
+  "name": "Parse & Set",
+  "author": {
+    "name": "Pierre Nespo",
+    "email": "pnespo@zendesk.com"
+  },
+  "parameters":[
+    {
+      "name": "field_id",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "regex",
+      "type": "text",
+      "required": true
+    }
+  ],
+  "defaultLocale": "en",
+  "private": true,
+  "location": "ticket_sidebar",
+  "frameworkVersion": "0.5"
+}

@@ -1,0 +1,17 @@
+{
+  "app": {
+    "description":  "Parse the ticket description by using the given regex and sets the result in a custom field",
+    "name":         "Parse and Set",
+
+    "parameters": {
+      "field_id": {
+        "label": "Result Field",
+        "helpText": "A custom field ID where the result of the regex will be put."
+      },
+      "regex": {
+        "label": "Regex",
+        "helpText": "A regex to match against the ticket's description"
+      }
+    }
+  }
+}
