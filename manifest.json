@@ -6,7 +6,12 @@
   },
   "parameters":[
     {
-      "name": "field_id",
+      "name": "fields",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "result_field",
       "type": "text",
       "required": true
     },

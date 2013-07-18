@@ -4,13 +4,16 @@
     "name":         "Parse and Set",
 
     "parameters": {
-      "field_id": {
-        "label": "Result Field",
-        "helpText": "A custom field ID where the result of the regex will be put."
+      "fields": {
+        "label": "Fields",
+        "helpText": "Comma separated list of fields to match against the given regexp (ex: subject,description)"
+      },
+      "result_field": {
+        "label": "Result",
+        "helpText": "A free text custom field ID in which the result of the match will be stored"
       },
       "regex": {
-        "label": "Regex",
-        "helpText": "A regex to match against the ticket's description"
+        "label": "Regex"
       }
     }
   }
