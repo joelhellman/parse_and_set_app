@@ -34,7 +34,7 @@
     },
 
     regexp: _.memoize(function(){
-      return this.setting('regex');
+      return this.setting('regexp');
     })
   };
 

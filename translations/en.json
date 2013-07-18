@@ -12,8 +12,8 @@
         "label": "Result",
         "helpText": "A free text custom field ID in which the result of the match will be stored"
       },
-      "regex": {
-        "label": "Regex"
+      "regexp": {
+        "label": "Regexp"
       }
     }
   }

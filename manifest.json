@@ -16,7 +16,7 @@
       "required": true
     },
     {
-      "name": "regex",
+      "name": "regexp",
       "type": "text",
       "required": true
     }
