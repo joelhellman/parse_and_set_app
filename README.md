@@ -1,4 +1,3 @@
-parse_and_set
-=============
+# Parse & Set App
 
-Parse the ticket description by using the given regex and sets the result in a custom field
+Parse any ticket field by using the given regex and sets the result in a custom field
