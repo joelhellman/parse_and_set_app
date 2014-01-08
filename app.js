@@ -2,18 +2,23 @@
 
   return {
     events: {
-      'app.activated':'initialize'
+      'app.activated':'onAppActivated'
     },
 
-    initialize: function(data) {
-      if (data.firstLoad){
-        var value = this.execRegexOnFields();
-        var key = 'custom_field_' + this.setting('result_field');
-
-        if (value && _.isEmpty(this.ticket().customField(key))){
-          this.ticket().customField(key, value);
-        }
+    onAppActivated: function(app) {
+      if (app.firstLoad){
+        _.defer(this.initialize.bind(this));
       }
+    },
+
+    initialize: function() {
+      var value = this.execRegexOnFields(),
+          key = helpers.fmt('custom_field_%@',this.setting('result_field'));
+
+      if (value && _.isEmpty(this.ticket().customField(key))){
+        this.ticket().customField(key, value);
+      }
+
     },
 
     execRegexOnFields: function(){
