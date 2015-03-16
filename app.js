@@ -27,7 +27,7 @@
       _.each(this.fields(), function(field){
         if (!_.isEmpty(this.containerContext().ticket[field]) &&
            _.isEmpty(value)){
-          value = (this.containerContext().ticket[field].match(this.regexp()) || [])[1] || "";
+          value = (this.containerContext().ticket[field].match(this.regexp()) || [])[0] || "";
         }
       }, this);
 
