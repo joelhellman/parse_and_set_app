@@ -24,6 +24,10 @@
     execRegexOnFields: function(){
       var value = '';
 
+      var ticket = this.containerContext().ticket;
+      var first_comment = _.last(ticket.comments);
+      ticket.description = first_comment.value;
+
       _.each(this.fields(), function(field){
         if (!_.isEmpty(this.containerContext().ticket[field]) &&
            _.isEmpty(value)){
