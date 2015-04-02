@@ -6,7 +6,7 @@
     "parameters": {
       "fields": {
         "label": "Fields",
-        "helpText": "Comma separated list of fields to match against the given regexp (ex: subject,description)"
+        "helpText": "Comma separated list of fields to match against the given regexp (ex: subject, description, custom_field_99999999)"
       },
       "result_field": {
         "label": "Result",
