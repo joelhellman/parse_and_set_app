@@ -19,6 +19,8 @@ You can use http://rubular.com to test and validate your regular expressions.
  * Regex: `Order number: #([a-zA-Z]{1,}[1-9]{1,})`
  * Result: `FSH2368`
 
+![](/assets/parse_and_set_screenshot.png)
+
 ---
 
 
