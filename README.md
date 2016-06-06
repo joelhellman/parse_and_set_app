@@ -2,6 +2,8 @@
 
 # Parse & Set App
 
+## Description:
+
 Parse any ticket field by using the given regex and sets the result in a custom field.
 
 You can use http://rubular.com to test and validate your regular expressions.
@@ -18,6 +20,8 @@ You can use http://rubular.com to test and validate your regular expressions.
  * Subject: `Order number: #FSH2368`
  * Regex: `Order number: #([a-zA-Z]{1,}[1-9]{1,})`
  * Result: `FSH2368`
+
+## Screenshot(s):
 
 ![](/assets/parse_and_set_screenshot.png)
 
