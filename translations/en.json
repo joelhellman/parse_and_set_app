@@ -9,12 +9,18 @@
         "helpText": "Comma separated list of fields to match against the given regexp (ex: subject, description, custom_field_99999999)"
       },
       "result_field": {
-        "label": "Result",
-        "helpText": "A free text custom field ID in which the result of the match will be stored"
+        "label": "Result ticket field ID",
+        "helpText": "A free text custom ticket field ID in which the result of the match will be stored"
+      },
+      "result_field_label": {
+        "label": "Result field label",
+        "helpText": "A friendly label for the Result field ID"
       },
       "regexp": {
         "label": "Regexp"
       }
     }
-  }
+  },
+  "match_found_message": "<strong>{{appName}}</strong><br>Matched '{{value}}' to field {{label}}",
+  "update_error_message": "<strong>{{appName}}</strong><br>Matched '{{value}}' to field {{label}}, but failed to update ticket"
 }

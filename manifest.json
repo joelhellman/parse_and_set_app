@@ -16,6 +16,11 @@
       "required": true
     },
     {
+      "name": "result_field_label",
+      "type": "text",
+      "required": true
+    },
+    {
       "name": "regexp",
       "type": "text",
       "required": true

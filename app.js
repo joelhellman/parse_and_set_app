@@ -2,7 +2,29 @@
 
   return {
     events: {
-      'app.activated':'onAppActivated'
+      'app.activated':'onAppActivated',
+      'updateField.done': 'onUpdateFieldDone',
+      'updateField.fail': 'onUpdateFieldFail'
+    },
+    requests: {
+      updateField: function(value) {
+        return {
+          url: helpers.fmt('/api/v2/tickets/%@.json', this.ticket().id()),
+          method: 'PUT',
+          dataType: 'json',
+          contentType: 'application/json',
+          data: JSON.stringify({
+            ticket: {
+              custom_fields: [
+                {
+                  id: this.setting('result_field'),
+                  value: value
+                }
+              ]
+            }
+          })
+        };
+      }
     },
 
     onAppActivated: function(app) {
@@ -11,14 +33,35 @@
       }
     },
 
+    onUpdateFieldDone: function() {
+      var msg = this.I18n.t('match_found_message', {
+        appName: this.setting('title'),
+        value: this.sentValue,
+        label: this.setting('result_field_label')
+      });
+      services.notify(msg);
+    },
+
+    onUpdateFieldFail: function() {
+      var msg = this.I18n.t('update_error_message', {
+        appName: this.setting('title'),
+        value: this.sentValue,
+        label: this.setting('result_field_label')
+      });
+      services.notify(msg, 'alert');
+    },
+
     initialize: function() {
-      var value = this.execRegexOnFields(),
-          key = helpers.fmt('custom_field_%@',this.setting('result_field'));
-
-      if (value && _.isEmpty(this.ticket().customField(key))){
-        this.ticket().customField(key, value);
+      var key = helpers.fmt('custom_field_%@',this.setting('result_field'));
+      if (!_.isEmpty(this.ticket().customField(key))) {
+        // don't overwrite existing values
+        return;
       }
-
+      var matchedValue = this.execRegexOnFields();
+      if (matchedValue){
+        this.sentValue = matchedValue;
+        this.ajax('updateField', this.sentValue);
+      }
     },
 
     execRegexOnFields: function(){
